@@ -4,16 +4,9 @@ let footballers = [
   "Pelé",
   "Diego Maradona",
   "Lionel Messi",
-  "Johan Cruyff",
-  "Alfredo Di Stéfano",
-  "Ferenc Puskás",
-  "Franz Beckenbauer",
   "Zinedine Zidane",
   "Paolo Maldini",
-  "Michel Platini",
-  "Garrincha",
-  "Gerd Müller",
-  "Zico",
+  "Roberto Carlos",
   "Cafu",
   "Cristiano Ronaldo",
 ];
@@ -44,7 +37,7 @@ let displayPlayers = e => {
 
       playersData.forEach(player => {
         $("#images-view")
-          .prepend(`<div class="card bg-info m-2"><div class="card-header h4 ">Rating: ${
+          .prepend(`<div class="card bg-info m-2 animated flip"><div class="card-header h4 ">Rating: ${
           player.rating
         }
        </div> <img class="img-thumbnail " src=${
@@ -58,7 +51,7 @@ renderButtons = () => {
   $("#buttons-view").empty();
   footballers.forEach(footballer => {
     $("#buttons-view").append(
-      `<button data-footballer=${footballer} class="footballer-btn btn btn-success p-2 m-2">${footballer}</button>`
+      `<button data-footballer=${footballer} type="button" class="footballer-btn btn btn-outline-light p-2 m-2">${footballer}</button>`
     );
   });
 
