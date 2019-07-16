@@ -18,7 +18,7 @@ let footballers = [
   "Cristiano Ronaldo",
 ];
 
-$(document).on("click", ".footballer-btn", (e)=>{
+let displayPlayers= (e)=>{
   console.log(e.target.innerText);
 var player = e.target.innerText;
 
@@ -43,38 +43,10 @@ var player = e.target.innerText;
       console.log("Response: " + playersData);
 
       playersData.forEach(player => {
-        $("#images-view").prepend(`<img class="img" src=${player.images.fixed_height.url}><br>`);
-        $("#images-view").prepend("Rating: " + player.rating + "<br>");
+        $("#images-view").prepend(`<div class="card"><div class="card-header h4 ">Rating: ${player.rating}
+        <img class="card bg-light" src=${player.images.fixed_height.url}></div></div>`);
+        $("#images-view").prepend(``);
 
       });
     });
-});
-
-renderButtons = () => {
-  $("#buttons-view").empty();
-  // footballers.forEach(footballer => {
-  //   $("#buttons-view").append(
-  //     `<button data-name=${footballers[i]} class="footballer-btn">${footballers[i]}</button>`
-  //   );
-
-
-    for (var i = 0; i < footballers.length; i++) {
-      $("#buttons-view").append(
-        `<button data-footballer=${footballers[i]} class="footballer-btn ui button green">${footballers[i]}</button>`);
-    }
 };
-
-$("#add-footballer").on("click", event => {
-  event.preventDefault();
-  let footballer = $("#footballer-input")
-    .val()
-    .trim();
-
-  footballers.push(footballer);
-
-  renderButtons();
-});
-
-//$(document).on("click", ".footballer-btn", displayPlayers);
-
-renderButtons();
