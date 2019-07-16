@@ -18,11 +18,11 @@ let footballers = [
   "Cristiano Ronaldo",
 ];
 
-let displayPlayers= (e)=>{
+let displayPlayers = e => {
   console.log(e.target.innerText);
-var player = e.target.innerText;
+  var player = e.target.innerText;
 
-//console.log(player)
+  //console.log(player)
 
   // Here we are building the URL we need to query the database
   let queryURL =
@@ -43,10 +43,13 @@ var player = e.target.innerText;
       console.log("Response: " + playersData);
 
       playersData.forEach(player => {
-        $("#images-view").prepend(`<div class="card"><div class="card-header h4 ">Rating: ${player.rating}
-        <img class="card bg-light" src=${player.images.fixed_height.url}></div></div>`);
-        $("#images-view").prepend(``);
-
+        $("#images-view")
+          .prepend(`<div class="card bg-info m-2"><div class="card-header h4 ">Rating: ${
+          player.rating
+        }
+       </div> <img class="img-thumbnail " src=${
+        player.images.fixed_height.url
+      }></div>`);
       });
     });
 };
@@ -55,14 +58,14 @@ renderButtons = () => {
   $("#buttons-view").empty();
   footballers.forEach(footballer => {
     $("#buttons-view").append(
-      `<button data-footballer=${footballer} class=" footballer-btn btn btn-success p-2 m-2">${footballer}</button>`
+      `<button data-footballer=${footballer} class="footballer-btn btn btn-success p-2 m-2">${footballer}</button>`
     );
-    });
+  });
 
-    // for (var i = 0; i < footballers.length; i++) {
-    //   $("#buttons-view").append(
-    //     `<button data-footballer=${footballers[i]} class=" footballer-btn btn btn-success p-2 m-2">${footballers[i]}</button>`);
-    // }
+  // for (var i = 0; i < footballers.length; i++) {
+  //   $("#buttons-view").append(
+  //     `<button data-footballer=${footballers[i]} class=" footballer-btn btn btn-success p-2 m-2">${footballers[i]}</button>`);
+  // }
 };
 
 $("#add-footballer").on("click", event => {
