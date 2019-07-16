@@ -50,3 +50,31 @@ var player = e.target.innerText;
       });
     });
 };
+
+renderButtons = () => {
+  $("#buttons-view").empty();
+  footballers.forEach(footballer => {
+    $("#buttons-view").append(
+      `<button data-footballer=${footballer} class=" footballer-btn btn btn-success p-2 m-2">${footballer}</button>`
+    );
+    });
+
+    // for (var i = 0; i < footballers.length; i++) {
+    //   $("#buttons-view").append(
+    //     `<button data-footballer=${footballers[i]} class=" footballer-btn btn btn-success p-2 m-2">${footballers[i]}</button>`);
+    // }
+};
+
+$("#add-footballer").on("click", event => {
+  event.preventDefault();
+  let footballer = $("#footballer-input")
+    .val()
+    .trim();
+
+  footballers.push(footballer);
+
+  renderButtons();
+});
+$(document).on("click", ".footballer-btn", displayPlayers);
+
+renderButtons();
