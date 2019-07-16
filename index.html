@@ -5,9 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>GigTastic</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css" />
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-        <div class="container">
+        <div class="ui container">
                 <h1>Soccer Player Search</h1>
 
                 <!-- Rendered Buttons will get Dumped Here  -->
@@ -15,21 +17,29 @@
 
                 </div>
 
-                <form id="footballer-form">
-                  <label for="footballer-input">Add a Footballer</label>
-                  <input type="text" id="footballer-input">
-                  <br>
 
-                  <!-- Button triggers new footballer to be added -->
-                  <input id="add-footballer" type="submit" value="Add a Footballer">
-                </form>
 
-                <!-- Footballer will Get Dumped Here -->
-                <div id="images-view">
-                    <p id="p"></p>
-                    <div id="image"></div>
-                </div>
- <div id="image"></div>
+<div class="ui container" style="margin-top:20px;">
+  <div class="ui segment">
+    <form id="footballer-form" class="ui form">
+      <div class="field">
+          <label for="footballer-input">Add a Footballer</label>
+          <input type="text" id="footballer-input">
+          <input id="add-footballer" type="submit" value="Add a Footballer">
+      </div>
+    </form>
+  </div>
+
+  <div class="image-list">
+    <div id="images-view" class="" style="grid-row-end: span 41">
+
+    </div>
+
+  </div>
+</div>
+
+
+
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <script src="assets/javascript/app.js"></script>
