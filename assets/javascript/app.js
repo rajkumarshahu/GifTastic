@@ -1,4 +1,3 @@
-
 let footballers = [
   "Pelé",
   "Diego Maradona",
@@ -6,61 +5,52 @@ let footballers = [
   "Zinedine Zidane",
   "Paolo Maldini",
   "Roberto Carlos",
-  "Cristiano Ronaldo"
+  "Cristiano Ronaldo",
 ];
 
 let displayPlayers = e => {
-  console.log(e.target.innerText);
-  var player = e.target.innerText;
+  let player = e.target.innerText;
+  const API_KEY = "QAX10ziVe8klE4BZUYXwoLf8uIyWHzQn";
 
-  //console.log(player)
-
-  // Here we are building the URL we need to query the database
+  // Building the URL to query the database
   let queryURL =
     "https://api.giphy.com/v1/gifs/search?q=" +
     player +
-    "&api_key=QAX10ziVe8klE4BZUYXwoLf8uIyWHzQn&limit=10";
+    "&api_key=" +
+    API_KEY +
+    "&limit=10";
 
-  // Here we run our AJAX call
+  // AJAX call
   $.ajax({
     url: queryURL,
     method: "GET",
   })
-    // We store all of the retrieved data inside of an object called "response"
+    // storing all retrieved data in response object
     .then(response => {
       console.log("Query URL: " + queryURL);
       let playersData = response.data;
-      // Log the resulting object
-      console.log("Response: " + playersData);
-
       playersData.forEach(player => {
         $("#images-view")
           .prepend(`<div class="card bg-info m-2 animated flip"><div class="card-header h4 ">Rating: ${
           player.rating
         }
        </div> <img class="img-thumbnail " src=${
-        player.images.fixed_height_still.url
-      } data-still= ${
-        player.images.fixed_height_still.url
-      } data-animate= ${
-        player.images.fixed_height.url
-      } data-state="still" ></div>`);
+         player.images.fixed_height_still.url
+       } data-still= ${player.images.fixed_height_still.url} data-animate= ${
+          player.images.fixed_height.url
+        } data-state="still" ></div>`);
       });
     });
 };
 
-renderButtons = () => {
+// This function generates buttons based on footballers name in footballers array
+let renderButtons = () => {
   $("#buttons-view").empty();
   footballers.forEach(footballer => {
     $("#buttons-view").append(
       `<button data-footballer=${footballer} type="button" class="footballer-btn btn btn-outline-light p-2 m-2">${footballer}</button>`
     );
   });
-
-  // for (var i = 0; i < footballers.length; i++) {
-  //   $("#buttons-view").append(
-  //     `<button data-footballer=${footballers[i]} class=" footballer-btn btn btn-success p-2 m-2">${footballers[i]}</button>`);
-  // }
 };
 
 $("#add-footballer").on("click", event => {
@@ -74,21 +64,18 @@ $("#add-footballer").on("click", event => {
   renderButtons();
 });
 
-
-
- function switchState() {
-
+function switchState() {
   var state = $(this).attr("data-state");
-
+  console.log("state: "+state);
   if (state === "still") {
+    console.log($(this).attr("src", $(this).attr("data-animate")));
     $(this).attr("src", $(this).attr("data-animate"));
     $(this).attr("data-state", "animate");
   } else {
     $(this).attr("src", $(this).attr("data-still"));
     $(this).attr("data-state", "still");
   }
-
-};
+}
 
 renderButtons();
 $(document).on("click", ".footballer-btn", displayPlayers);
