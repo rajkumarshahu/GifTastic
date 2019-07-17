@@ -1,4 +1,3 @@
-`use strict`;
 
 let footballers = [
   "Pelé",
@@ -41,8 +40,12 @@ let displayPlayers = e => {
           player.rating
         }
        </div> <img class="img-thumbnail " src=${
+        player.images.fixed_height_still.url
+      } data-still= ${
+        player.images.fixed_height_still.url
+      } data-animate= ${
         player.images.fixed_height.url
-      }></div>`);
+      } data-state="still" ></div>`);
       });
     });
 };
@@ -61,7 +64,7 @@ renderButtons = () => {
   // }
 };
 
-$("#add-footballer").on("click", event => {
+$(".img-thumbnail").on("click", event => {
   event.preventDefault();
   let footballer = $("#footballer-input")
     .val()
@@ -71,6 +74,23 @@ $("#add-footballer").on("click", event => {
 
   renderButtons();
 });
-$(document).on("click", ".footballer-btn", displayPlayers);
+
+
+
+ function switchState() {
+
+  var state = $(this).attr("data-state");
+
+  if (state === "still") {
+    $(this).attr("src", $(this).attr("data-animate"));
+    $(this).attr("data-state", "animate");
+  } else {
+    $(this).attr("src", $(this).attr("data-still"));
+    $(this).attr("data-state", "still");
+  }
+
+};
 
 renderButtons();
+$(document).on("click", ".footballer-btn", displayPlayers);
+$(document).on("click", ".img-thumbnail", switchState);
