@@ -66,7 +66,7 @@ $("#add-footballer").on("click", event => {
 
 function switchState() {
   var state = $(this).attr("data-state");
-  console.log("state: "+state);
+  //console.log("state: "+state);
   if (state === "still") {
     console.log($(this).attr("src", $(this).attr("data-animate")));
     $(this).attr("src", $(this).attr("data-animate"));
