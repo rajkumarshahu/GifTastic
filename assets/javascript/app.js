@@ -6,8 +6,7 @@ let footballers = [
   "Zinedine Zidane",
   "Paolo Maldini",
   "Roberto Carlos",
-  "Cafu",
-  "Cristiano Ronaldo",
+  "Cristiano Ronaldo"
 ];
 
 let displayPlayers = e => {
@@ -64,7 +63,7 @@ renderButtons = () => {
   // }
 };
 
-$(".img-thumbnail").on("click", event => {
+$("#add-footballer").on("click", event => {
   event.preventDefault();
   let footballer = $("#footballer-input")
     .val()

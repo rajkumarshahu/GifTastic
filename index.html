@@ -1,48 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>GigTastic</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
 
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
     />
-    <link rel="stylesheet" href="./assets/css/style.css">
-</head>
-<body class="main-container">
-        <div class="container main-container">
-          <div class="border-dark bg-dark text-light text-center p-2">
-            <h1 id="header">Soccer Player Search</h1>
-          </div>
-
-          <div id="buttons-view" class="border border-info p-2 m-2 bg-info">
-
-          </div>
-
-  <div class="main-container p-3 m-4 border-info rounded">
-    <form id="footballer-form">
-      <div class="form-group ">
-          <input class="form-control" type="text" id="footballer-input" placeholder="Add a Footballer">
+    <link
+      href="https://fonts.googleapis.com/css?family=Faster+One|Montserrat+Alternates|Rakkas|Roboto&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <div class="container main-container">
+      <div class="border-dark bg-dark text-light text-center p-2">
+        <h1 id="header">Soccer Player Search</h1>
       </div>
-      <div>
 
+      <div id="buttons-view" class="border border-info p-2 m-2 bg-info"></div>
+
+      <div class="main-container p-3 m-4 border-info rounded">
+        <form id="footballer-form">
+          <div class="row">
+            <div class="form-group col-9">
+              <input
+                class="form-control"
+                type="text"
+                id="footballer-input"
+                placeholder="Type a name of your favorite soccer player"
+              />
+            </div>
+            <div class="col-3">
+              <button type="submit" id="add-footballer" class="btn btn-primary">
+                Add a Soccer Player
+              </button>
+            </div>
+          </div>
+        </form>
       </div>
-      <button type="submit" id="add-footballer" class="btn btn-primary">Add a Footballer</button>
-      <!-- <input id="add-footballer" type="submit" value="Add a Footballer"> -->
-    </form>
-  </div>
 
-  <div class="main-image-container" id="images-view" >
-</div>
-</div>
+      <div class="main-image-container" id="images-view"></div>
 
-
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="assets/javascript/app.js"></script>
+      <div class="p-5">&nbsp;</div>
+      <footer class="footer fixed-bottom py-4 bg-dark text-white">
+        <div class="container text-center">
+          <small
+            >&copy;
+            <script type="text/javascript">
+              document.write(new Date().getFullYear());
+            </script>
+            UofT SCS Coding Bootcamp</small
+          >
+        </div>
+      </footer>
+    </div>
+  </body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="assets/javascript/app.js"></script>
 </html>

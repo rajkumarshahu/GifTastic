@@ -1,8 +1,13 @@
 body{
     background: url("../images/body-bg.png");
-    background-size: cover;
-    width: 100%;
+    background-color: rgba(75,175,198, 0.9);
+    background-size: contain;
+    background-repeat: repeat;
 
+}
+
+#header{
+    font-family: 'Faster One', cursive;
 }
 
 .main-container{
@@ -18,12 +23,66 @@ body{
 
 }
 
+.footballer-btn, #add-footballer{
+    font-family: 'Montserrat Alternates', sans-serif;
+}
+
 .card-header{
     color: #fefefe;
+    font-family: 'Roboto', sans-serif;
 }
 
 
 img{
     width: 300px;
     margin:10px;
+}
+
+
+@media only screen and (min-width: 641px) and (max-width: 768px){
+    .main-image-container{
+        display: block;
+        text-align: center;
+    }
+
+    /* .image-container__col {
+        display: inline-block;
+        margin:3px;
+        width: 235px;
+        height: 240px;
+    }*/
+
+    img{
+        width:100%;
+        height:auto;
+        max-width: 235px;
+    }
+
+}
+
+@media only screen and (min-width: 769px) and (max-width: 980px){
+
+    .main-image-container{
+        display: block;
+    }
+
+
+    img{
+        width:100%;
+        height:auto;
+        max-width: 235px;
+    }
+
+}
+@media only screen and (min-width: 979px)and (max-width: 1024px){
+
+
+
+     img{
+        width:100%;
+        height:auto;
+        max-width: 235px;
+    }
+
+
 }
